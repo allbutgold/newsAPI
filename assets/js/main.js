@@ -1,10 +1,11 @@
 
 const btn = document.querySelector('#searchBtn');
 const apiKey = 'd9ac8667cbf740f88d423a806e773628';
-const url = 'https://newsapi.org/v2/everything?'
+const url = 'http://newsapi.org/v2/everything?'
 
 
-btn.addEventListener('click', () => {
+btn.addEventListener('click', (element) => {
+    element.preventDefault();
     const language = document.querySelector('#de').value; // default language value is 'de' for german
     const world = document.querySelector('#input').value; // default input is world
     // console.log(world, language);
