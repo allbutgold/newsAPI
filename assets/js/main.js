@@ -2,11 +2,11 @@
 
 
 function news() {
-    let de = document.querySelector('#de').value;
-    let search = document.querySelector('#input').value;
-    console.log(search);
+    let de = document.querySelector('#de').value; // default language value is 'de' for german
+    let world = document.querySelector('#input').value;
+    console.log(world);
 
-fetch(`http://newsapi.org/v2/everything?q=${search}&from=2023-01-16&sortBy=relevancy&apiKey=12524e5113c24ca591d9e5e168cbdf92&language=${de}`)
+fetch(`https://newsapi.org/v2/everything?q=${world}&from=2023-01-16&sortBy=relevancy&apiKey=12524e5113c24ca591d9e5e168cbdf92&language=${de}`)
     .then(response => response.json())
     .then(data => {
         console.log(data)
@@ -45,9 +45,10 @@ fetch(`http://newsapi.org/v2/everything?q=${search}&from=2023-01-16&sortBy=relev
             
             // console.log(imgElement.innerHTML);
 
-                readMore.addEventListener('click', () => {
-                    window.open(url, '_blank');
-                });
+            readMore.addEventListener('click', () => {
+                window.open(url, '_blank');
+            });
+
             // insert into the page
             parentElement.appendChild(imgElement);
             parentElement.appendChild(titleElement);
@@ -59,5 +60,8 @@ fetch(`http://newsapi.org/v2/everything?q=${search}&from=2023-01-16&sortBy=relev
 
 
         })
+
     })};
+
+    news();
 
