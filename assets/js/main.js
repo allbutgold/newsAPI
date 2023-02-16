@@ -1,12 +1,26 @@
 
+const btn = document.querySelector('#searchBtn');
+const apiKey = 'd9ac8667cbf740f88d423a806e773628';
+const url = 'https://newsapi.org/v2/everything?'
 
 
-function news() {
-    let de = document.querySelector('#de').value; // default language value is 'de' for german
-    let world = document.querySelector('#input').value;
-    console.log(world);
+btn.addEventListener('click', () => {
+    const language = document.querySelector('#de').value; // default language value is 'de' for german
+    const world = document.querySelector('#input').value; // default input is world
+    // console.log(world, language);
 
-fetch(`https://newsapi.org/v2/everything?q=${world}&from=2023-01-16&sortBy=relevancy&apiKey=12524e5113c24ca591d9e5e168cbdf92&language=${de}`)
+    const de = language;
+    const input = world;
+    const key = apiKey;
+
+    // set search parameters
+    const params = new URLSearchParams({
+        language: de,
+        apiKey: key,
+        q: input
+    });
+
+fetch(`${url}${params}`) 
     .then(response => response.json())
     .then(data => {
         console.log(data)
@@ -14,7 +28,6 @@ fetch(`https://newsapi.org/v2/everything?q=${world}&from=2023-01-16&sortBy=relev
             // get the data from the api and save the values as variables
             // const author = dataPoint.author;
             const content = dataPoint.content;
-            // const description = dataPoint.description;
             const url = dataPoint.url;
             const title = dataPoint.title;
             const publishedAt = dataPoint.publishedAt;
@@ -24,44 +37,43 @@ fetch(`https://newsapi.org/v2/everything?q=${world}&from=2023-01-16&sortBy=relev
             // console.log(author, content, description, url, title, publishedAt, urlToImage, source)
 
             // create HTML elements
+            // container
+            const articleContainer = document.createElement('article');
             const parentElement = document.createElement('div');
+            // content
             const imgElement = document.createElement('figure')
-            // const descriptionElement = document.createElement('h3')
             const sourceElement = document.createElement('h4')
             const titleElement = document.createElement('h4')
-            // const urlElement = document.createElement('a')
             const contentElement = document.createElement('p');
             const readMore = document.createElement('button');
-            const dateElement = document.createElement('p');
-            console.log(dateElement);
+            const dateElement = document.createElement('h4');
 
             // write the values to the HTML elements
             imgElement.innerHTML = `<img src="${urlToImage}" >`;
             sourceElement.innerHTML = source;
             titleElement.innerHTML = `${title} - ${source}`;
             contentElement.innerHTML = content;
-            readMore.innerText = `read more`;
+            readMore.innerText = `READ MORE`;
             dateElement.innerHTML = date;
-            
-            // console.log(imgElement.innerHTML);
 
+            // read more button
             readMore.addEventListener('click', () => {
                 window.open(url, '_blank');
             });
 
-            // insert into the page
+            // insert into div
             parentElement.appendChild(imgElement);
             parentElement.appendChild(titleElement);
             parentElement.appendChild(contentElement);
             parentElement.appendChild(dateElement);
             parentElement.appendChild(readMore);
-
-            document.body.appendChild(parentElement);
-
-
+            // article container
+            articleContainer.appendChild(parentElement);
+            // append to the end of the body
+            document.body.appendChild(articleContainer);
         })
+    })
+});
 
-    })};
 
-    news();
 

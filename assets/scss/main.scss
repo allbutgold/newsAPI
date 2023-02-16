@@ -1,36 +1,122 @@
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: raleway;
+    src: url(../fonts/Raleway/static/Raleway-Light.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    scroll-behavior: smooth;
+    color: black;
+    font-family: raleway;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: cadetblue;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(66, 119, 121);
     header {
+        font-family: roboto;
+        top: 0;
+        position: sticky;
+        height: 50px;
         width: 100vw;
         color: ghostwhite;
         display: flex;
         justify-content: space-around;
         align-items: center;
         background-color: black;
-        border-radius: 20px;
+        article {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            form {
+                margin: 30px;
+            }
+            label {
+                margin: 5px;
+            }
+        }
     }
+    main {
+        section {
+            width: 60%;
+            margin: 50px auto 50px auto;
+            h2 {
+                text-align: center;
+                color: aliceblue;
+            }
+
+
+        }
+    }
+    
 }
 
 
-img {
-    width: 200px;
-    height: 100px;
-    object-fit: contain;
-}
 
+article {
+    display: flex;
+    align-items: center;
 div {
+    font-family: raleway;
     width: 300px;
-    height: 450px;
+    height: 520px;
     margin: 20px;
     border: 1px solid black;
+    box-shadow: -4px -3px 0px 0px rgba(0, 0, 0, 0.552);
     border-radius: 10px;
     padding: 10px;
     background-color: aliceblue;
     p {
-        overflow: hidden;
+        margin: 20px 5px 20px 5px;
     }
+    figure img {
+    width: 100%;
+    height: 150px;
+    object-fit: fill;
+    margin: 20px 0 20px 0;
+    border-radius: 4px;
+}
+h4 {
+    font-family: roboto;
+    margin-bottom: 10px;
+}
+button {
+    background-color: rgb(66, 119, 121);
+    color: aliceblue;
+    width: 120px;
+    height: 20px;
+    border: 1.2px solid black;;
+    text-decoration: none;
+    font-family: roboto;
+}
+}}
+
+footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+        section {
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+        a {
+            color: aliceblue;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+    }
+
 }
