@@ -1,30 +1,36 @@
 
 const btn = document.querySelector('#searchBtn');
 const apiKey = 'd9ac8667cbf740f88d423a806e773628';
-const url = 'http://newsapi.org/v2/everything?'
+const url = 'http://newsapi.org/v2/top-headlines?'
 
 
 btn.addEventListener('click', (element) => {
     element.preventDefault();
-    const language = document.querySelector('#de').value; // default language value is 'de' for german
+    const language = document.querySelector('#en').value; // default language value is 'de' for german
     const world = document.querySelector('#input').value; // default input is world
-    // console.log(world, language);
+    const category = document.querySelector('#category').value; // default category is 'technology'
+    // const country = document.querySelector('#country').value; 
+    // console.log(world, language, country);
 
-    const de = language;
+    const en = language;
     const input = world;
     const key = apiKey;
 
+
     // set search parameters
     const params = new URLSearchParams({
-        language: de,
+        language: en,
         apiKey: key,
-        q: input
+        q: input,
+        category: category
+        // country: country
+
     });
 
 fetch(`${url}${params}`) 
     .then(response => response.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
         data.articles.forEach(dataPoint => {
             // get the data from the api and save the values as variables
             // const author = dataPoint.author;

@@ -36,18 +36,54 @@ body header {
 body header article {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
+body header article label {
+  color: aliceblue;
+  font-family: roboto;
+}
+body header article select {
+  font-family: roboto;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  padding: 5px;
+  background-color: aliceblue;
+  margin-left: 10px;
+}
 body header article form {
-  margin: 30px;
+  margin: 0 0 0 60px;
+}
+body header article form input {
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  background-color: aliceblue;
+  font-family: roboto;
+}
+body header article form button {
+  margin: 0 5px;
+  font-family: roboto;
+  height: 30px;
+  width: 80px;
+  padding: 0 7px 0 7px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(147, 18, 147);
+  color: aliceblue;
 }
 body header article label {
-  margin: 5px;
+  margin: 15px;
+}
+body main {
+  width: 100%;
 }
 body main section {
   width: 60%;
-  margin: 50px auto 50px auto;
+  margin: 50px 20% 50px 20%;
 }
 body main section h2 {
   text-align: center;
@@ -61,7 +97,7 @@ article {
 article div {
   font-family: raleway;
   width: 300px;
-  height: 520px;
+  height: 540px;
   margin: 20px;
   border: 1px solid black;
   box-shadow: -4px -3px 0px 0px rgba(0, 0, 0, 0.552);
@@ -75,8 +111,8 @@ article div p {
 article div figure img {
   width: 100%;
   height: 150px;
-  object-fit: fill;
-  margin: 20px 0 20px 0;
+  object-fit: cover;
+  margin: 10px 0 20px 0;
   border-radius: 4px;
 }
 article div h4 {
