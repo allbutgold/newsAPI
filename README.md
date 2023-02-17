@@ -15,7 +15,9 @@ The website is responsive and adapts to different screen sizes.
 ==== Technologies ====
 
 HTML
+
 SCSS
+
 JavaScript
 
 
