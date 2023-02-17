@@ -27,11 +27,14 @@ body header {
   position: sticky;
   height: 50px;
   width: 100vw;
-  color: ghostwhite;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: black;
+}
+body header a {
+  text-decoration: none;
+  color: ghostwhite;
 }
 body header article {
   display: flex;
@@ -132,6 +135,7 @@ article div h4 {
 article div button {
   background-color: rgb(66, 119, 121);
   color: aliceblue;
+  border-radius: 5px;
   width: 120px;
   height: 20px;
   border: 1.2px solid black;
@@ -143,22 +147,38 @@ article div button:hover {
 }
 
 footer {
-  position: sticky;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: black;
 }
 footer section {
-  width: 200px;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   padding: 10px;
 }
 footer section a {
+  font-size: 0.8em;
   color: aliceblue;
   text-decoration: none;
-  margin-top: 5px;
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 920px) {
+  body header {
+    height: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 580px) {
+  body header {
+    height: 150px;
+  }
+  body header article form {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
