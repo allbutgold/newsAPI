@@ -1,7 +1,7 @@
 # newsAPI
 ==== README ====
 
-This is a responsive news website built with HTML, SCSS, and JavaScript.
+This is a responsive and dynamic news website built with HTML, SCSS, and JavaScript.
 
 
 ==== Features ====
