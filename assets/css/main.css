@@ -75,24 +75,34 @@ body header article form button {
   background-color: rgb(147, 18, 147);
   color: aliceblue;
 }
+body header article form button:hover {
+  background-color: rgb(66, 119, 121);
+}
 body header article label {
   margin: 15px;
 }
 body main {
   width: 100%;
 }
-body main section {
+body main .intro {
   width: 60%;
   margin: 50px 20% 50px 20%;
 }
-body main section h2 {
+body main .intro h2 {
   text-align: center;
   color: aliceblue;
+}
+body main #newsContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100% !important;
 }
 
 article {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 article div {
   font-family: raleway;
@@ -127,6 +137,9 @@ article div button {
   border: 1.2px solid black;
   text-decoration: none;
   font-family: roboto;
+}
+article div button:hover {
+  background-color: rgb(147, 18, 147);
 }
 
 footer {
